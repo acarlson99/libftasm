@@ -1,7 +1,7 @@
 NSM = /usr/bin/env nasm
 NSMFLAGS = -f macho64
 LNK = ld
-SFILES = ft_isalpha.s ft_isdigit.s ft_isalnum.s ft_isascii.s ft_isprint.s ft_toupper.s ft_tolower.s ft_strlen.s ft_puts.s
+SFILES = ft_isalpha.s ft_isdigit.s ft_isalnum.s ft_isascii.s ft_isprint.s ft_toupper.s ft_tolower.s ft_strlen.s ft_puts.s ft_memset.s ft_bzero.s ft_memcpy.s
 SRC = src/
 OFILES = $(SFILES:.s=.o)
 NAME = libfts.a

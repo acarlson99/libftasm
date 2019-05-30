@@ -86,20 +86,39 @@ int main() {
 	TEST("%zu", ft_strlen, strlen, "");
 
 	printf("PUTS\n");
-	puts("A");
-	puts("");
-	puts("A");
-	puts("A");
-	puts("");
-	puts("A");
+	printf("%d\n", puts("A"));
+	printf("%d\n", puts(""));
+	printf("%d\n", puts("A"));
+	printf("%d\n", puts("A"));
+	printf("%d\n", puts(""));
+	printf("%d\n", puts("A"));
 
 	puts("--------");
 
-	ft_puts("A");
-	ft_puts("");
-	ft_puts("A");
-	ft_puts("A");
-	ft_puts("");
-	ft_puts("A");
+	printf("%d\n", ft_puts("A"));
+	printf("%d\n", ft_puts(""));
+	printf("%d\n", ft_puts("A"));
+	printf("%d\n", ft_puts("A"));
+	printf("%d\n", ft_puts(""));
+	printf("%d\n", ft_puts("A"));
 	TEST("[%d]", ft_puts, puts, "");
+
+	char a[] = "abc def ghi";
+	char b[] = "abc def ghi";
+	printf("%s\n", memset(a, 'f', 0));
+	printf("%s\n", ft_memset(b, 'f', 0));
+	printf("%s\n", memset(a+4, 'f', 3));
+	printf("%s\n", ft_memset(b+4, 'f', 3));
+
+	bzero(a, 10);
+	ft_bzero(b, 10);
+
+	for (int i = 0; i < 11; ++i) {
+		printf("%d %d\n", i[a], i[b]);
+		assert(i[a] == i[b]);
+	}
+
+	char *c = "AAaAAAA  B";
+	printf("%s\n", memcpy(a, c, 10));
+	printf("%s\n", ft_memcpy(a, c, 10));
 }

@@ -1,9 +1,6 @@
 global _ft_puts
 extern _ft_strlen
 
-section .data
-	.msg db 0xa
-
 section .text
 
 _ft_puts:
@@ -28,3 +25,6 @@ _ft_puts:
 
 .ret:
 	ret
+
+section .data
+	.msg db 0xa
