@@ -121,4 +121,23 @@ int main() {
 	char *c = "AAaAAAA  B";
 	printf("%s\n", memcpy(a, c, 10));
 	printf("%s\n", ft_memcpy(a, c, 10));
+
+	char d[100] = "";
+	char e[100] = "";
+	char *end = "a string\000000000000";
+
+	char *ss = strcat(strcat(d, "This is "), "a string");
+	printf("%s\n", ss);
+	char *s = ft_strcat(ft_strcat(e, "This is "), "a string");
+	printf("%s\n", s);
+
+	strcat(ss, "");
+	printf("%s\n", ss);
+	ft_strcat(s, "");
+	printf("%s\n", s);
+
+	ss = strdup(s);
+	printf("\n%s\n", ss);
+	s = ft_strdup(s);
+	printf("%s\n", s);
 }
