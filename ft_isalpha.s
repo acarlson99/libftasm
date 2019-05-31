@@ -3,8 +3,10 @@ global _ft_isalpha
 section .text
 	
 _ft_isalpha:
+	push rbp
+	mov rbp, rsp
 	mov eax, 0
-	or edi, 32
+	or edi, 32					; tolower
 	cmp edi, 'a'
 	jae .alpha
 	jmp .return
@@ -15,4 +17,5 @@ _ft_isalpha:
 	inc eax
 
 .return:
+	pop rbp
 	ret

@@ -4,6 +4,8 @@ extern _ft_strlen
 section .text
 
 _ft_puts:
+	push rbp
+	mov rbp, rsp
 	call _ft_strlen
 	mov rdx, rax				; len
 	mov rax, 0x2000004			; command
@@ -24,6 +26,7 @@ _ft_puts:
 	mov rax, 10
 
 .ret:
+	pop rbp
 	ret
 
 section .data

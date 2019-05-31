@@ -3,6 +3,8 @@ global _ft_isdigit
 section .text
 	
 _ft_isdigit:
+	push rbp
+	mov rbp, rsp
 	mov eax, 0
 	cmp edi, '0'
 	jae .digit
@@ -14,4 +16,5 @@ _ft_isdigit:
 	inc eax
 
 .return:
+	pop rbp
 	ret

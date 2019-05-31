@@ -3,6 +3,8 @@ global _ft_isascii
 section .text
 
 _ft_isascii:
+	push rbp
+	mov rbp, rsp
 	mov eax, 0
 	cmp edi, 0
 	jae .ascii
@@ -14,4 +16,5 @@ _ft_isascii:
 	inc eax
 
 .return:
+	pop rbp
 	ret

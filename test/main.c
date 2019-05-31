@@ -158,7 +158,7 @@ int main() {
 	ft_cat(fd);
 	close(fd);
 
-	// ft_cat(fd);	// This breaks everything
+	ft_cat(fd);	// This breaks everything
 
-	// ft_cat(-1);	// So does this
+	ft_cat(-1);	// So does this
 }

@@ -3,12 +3,13 @@ extern _ft_isalpha
 extern _ft_isdigit
 
 _ft_isalnum:
+	push rbp
+	mov rbp, rsp
 	call _ft_isdigit
 	cmp eax, 0
 	jne .ret
 	call _ft_isalpha
-	cmp eax, 100
-	je _ft_isalnum
 
 .ret:
+	pop rbp
 	ret

@@ -1,8 +1,8 @@
 global _ft_cat
 
 _ft_cat:
-	cmp rdi, 0
-	jb .ret
+	push rbp
+	mov rbp, rsp
 	mov r10, rdi
 
 .read
@@ -12,8 +12,9 @@ _ft_cat:
 	mov rdx, 2048				; size
 	syscall
 
+	jc .ret
 	cmp rax, 0
-	jbe .ret
+	je .ret
 
 	mov rdx, rax				; size
 	mov rax, 0x2000004			; sys_write
@@ -24,6 +25,7 @@ _ft_cat:
 	jmp .read
 
 .ret:
+	pop rbp
 	ret
 
 section .bss

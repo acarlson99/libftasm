@@ -1,6 +1,8 @@
 global _ft_tolower
 
 _ft_tolower:
+	push rbp
+	mov rbp, rsp
 	mov eax, edi
 	cmp eax, 'A'
 	jae .true
@@ -12,4 +14,5 @@ _ft_tolower:
 	or eax, 32
 
 .return:
+	pop rbp
 	ret

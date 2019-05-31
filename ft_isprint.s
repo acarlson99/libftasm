@@ -3,6 +3,8 @@ global _ft_isprint
 section .text
 
 _ft_isprint:
+	push rbp
+	mov rbp, rsp
 	mov eax, 0
 	cmp edi, ' '
 	jae .print
@@ -14,4 +16,5 @@ _ft_isprint:
 	inc eax
 
 .return:
+	pop rbp
 	ret
