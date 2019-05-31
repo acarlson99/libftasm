@@ -1,7 +1,8 @@
 global _ft_cat
-extern _ft_puts
 
 _ft_cat:
+	cmp rdi, 0
+	jb .ret
 	mov r10, rdi
 
 .read
@@ -11,11 +12,10 @@ _ft_cat:
 	mov rdx, 2048				; size
 	syscall
 
-	mov rdx, rax				; size
-
 	cmp rax, 0
-	je .ret
+	jbe .ret
 
+	mov rdx, rax				; size
 	mov rax, 0x2000004			; sys_write
 	mov rsi, info				; buf
 	mov rdi, 1					; fd

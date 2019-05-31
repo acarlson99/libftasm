@@ -153,4 +153,12 @@ int main() {
 	int fd = open("Makefile", O_RDONLY);
 	ft_cat(fd);
 	close(fd);
+
+	fd = open("test/ft_cat.txt", O_RDONLY);
+	ft_cat(fd);
+	close(fd);
+
+	// ft_cat(fd);	// This breaks everything
+
+	// ft_cat(-1);	// So does this
 }
