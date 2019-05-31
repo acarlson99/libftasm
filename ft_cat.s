@@ -5,19 +5,20 @@ _ft_cat:
 	mov r10, rdi
 
 .read
-	mov rax, 0x2000003
-	mov rdi, r10
-	mov rsi, info
-	mov rdx, 26
+	mov rax, 0x2000003			; sys_read
+	mov rdi, r10				; fd
+	mov rsi, info				; buf
+	mov rdx, 2048				; size
 	syscall
 
-	cmp rax, 15
-	jbe .ret
+	mov rdx, rax				; size
 
-	mov rdx, 26
-	mov rax, 0x2000004
-	mov rsi, info
-	mov rdi, 0x1
+	cmp rax, 0
+	je .ret
+
+	mov rax, 0x2000004			; sys_write
+	mov rsi, info				; buf
+	mov rdi, 1					; fd
 	syscall
 
 	jmp .read
@@ -26,4 +27,4 @@ _ft_cat:
 	ret
 
 section .bss
-	info resb 26
+	info resb 2048
