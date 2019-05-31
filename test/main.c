@@ -161,4 +161,25 @@ int main() {
 	ft_cat(fd);	// This breaks everything
 
 	ft_cat(-1);	// So does this
+
+	TEST("%d", ft_isspace, isspace, ' ');
+	TEST("%d", ft_isspace, isspace, 8);
+	TEST("%d", ft_isspace, isspace, 9);
+
+	TEST("%p", ft_strchr, strchr, "42FileChecker", 0);
+
+	TEST("%p", ft_memchr, memchr, "42FileChecker", 0, 14);
+	TEST("%p", ft_memchr, memchr, "42FileChecker", 52, 14);
+	TEST("%p", ft_memchr, memchr, "42FileChecker", 107, 13);
+	TEST("%p", ft_memchr, memchr, "42FileChecker", 107, 4);
+	TEST("%p", ft_memchr, memchr, "42FileChecker", 52, 0);
+	TEST("%p", ft_memchr, memchr, "42FileChecker", 122, 13);
+
+	TEST("%p", ft_strrchr, strrchr, "42FileChecker", 52);
+	TEST("%p", ft_strrchr, strrchr, "42FileChecker", 107);
+	TEST("%p", ft_strrchr, strrchr, "42FileChecker", 107);
+	TEST("%p", ft_strrchr, strrchr, "42FileChecker", 52);
+	TEST("%p", ft_strrchr, strrchr, "42FileChecker", 122);
+	TEST("%p", ft_strrchr, strrchr, "42FileChecker", 0);
+	TEST("%p", ft_strrchr, strrchr, "AAAAAAAAAA", 'A');
 }

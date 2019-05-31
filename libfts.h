@@ -6,7 +6,6 @@
 ** change r to e = int form
 ** chop off 'r' = short
 ** dil sil dl cl = rdi, rsi, rdx, rcx char form
-** 
 */
 
 void			ft_bzero(void *s, size_t n);
@@ -26,3 +25,10 @@ void			*ft_memcpy(void *dst, const void *src, size_t n);
 char			*ft_strdup(const char *s1);
 
 void			ft_cat(int fd);
+
+int				ft_isspace(int c);
+int				ft_islower(int c);
+int				ft_isupper(int c);
+char			*ft_strchr(const char *s, int c);
+char			*ft_strrchr(const char *s, int c);
+void			*ft_memchr(const void *s, int c, size_t n);
