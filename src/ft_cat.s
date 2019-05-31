@@ -5,7 +5,7 @@ _ft_cat:
 	mov rbp, rsp
 	mov r10, rdi
 
-.read
+.read:
 	mov rax, 0x2000003			; sys_read
 	mov rdi, r10				; fd
 	mov rsi, info				; buf

@@ -1,4 +1,4 @@
-#include "../libfts.h"
+#include "../inc/libfts.h"
 #include <fcntl.h>
 #include <string.h>
 #include <unistd.h>
