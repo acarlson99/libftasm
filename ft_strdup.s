@@ -6,20 +6,20 @@ extern _ft_memcpy
 extern _puts
 
 _ft_strdup:
-	push rbp
-	mov rbp, rsp
-	mov r14, rdi
+	push rbp					; push base stack ptr
+	mov rbp, rsp				; move stack ptr to base
+	mov r14, rdi				; save string to dup
 	call _ft_strlen
 	add rax, 1					; len to malloc
-	mov r15, rax
-	mov rdi, rax
+	mov r15, rax				; save strlen
+	mov rdi, rax				; load len to malloc
 	call _malloc
 	cmp rax, 0
-	je .ret
-	mov rdi, r14
-	mov rsi, r15
+	je .ret						; malloc failed
+	mov rdi, r14				; len
+	mov rsi, r15				; string
 	call _ft_memcpy
-	pop rbp
+	pop rbp						; pop stack ptr
 
 .ret:
 	ret

@@ -1,4 +1,9 @@
 #include "../libfts.h"
+#include <fcntl.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <assert.h>
 
@@ -136,8 +141,16 @@ int main() {
 	ft_strcat(s, "");
 	printf("%s\n", s);
 
-	ss = strdup(s);
+	char *f = "abc def\0NOOOOOOOOOOOOOOOOOOOOOOOOOOOOO";
+
+	ss = strdup(f);
 	printf("\n%s\n", ss);
-	s = ft_strdup(s);
+	s = ft_strdup(f);
 	printf("%s\n", s);
+
+	fflush(stdout);
+
+	int fd = open("Makefile", O_RDONLY);
+	ft_cat(fd);
+	close(fd);
 }
