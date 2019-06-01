@@ -19,7 +19,7 @@ _ft_puts:
 
 .endl:
 	mov rax, 0x2000004			; command
-	mov rsi, .msg
+	lea rsi, [rel .msg]
 	mov rdx, 1					; make len 1
 	mov rdi, 0x1				; file desc
 	syscall

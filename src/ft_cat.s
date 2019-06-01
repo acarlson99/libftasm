@@ -8,7 +8,7 @@ _ft_cat:
 .read:
 	mov rax, 0x2000003			; sys_read
 	mov rdi, r10				; fd
-	mov rsi, info				; buf
+	lea rsi, [rel info]			; buf
 	mov rdx, 2048				; size
 	syscall
 
@@ -18,7 +18,7 @@ _ft_cat:
 
 	mov rdx, rax				; size
 	mov rax, 0x2000004			; sys_write
-	mov rsi, info				; buf
+	lea rsi, [rel info]			; buf
 	mov rdi, 1					; fd
 	syscall
 
