@@ -10,6 +10,7 @@ _ft_cat:
 	mov rdi, r10				; fd
 	lea rsi, [rel info]			; buf
 	mov rdx, 2048				; size
+	clc
 	syscall
 
 	jc .ret
