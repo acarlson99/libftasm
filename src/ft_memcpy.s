@@ -1,18 +1,18 @@
+;; void			*ft_memcpy(void *dst, const void *src, size_t n);
+;;                          rdi,          rsi,            rdx
+
 global _ft_memcpy
 
 _ft_memcpy:
 	push rbp
 	mov rbp, rsp
+	push rdi					; ptr to return
 
-.loop:
-	cmp rdx, 0
-	je .end						; 0 bytes left to copy
-	dec rdx
-	mov bh, byte [rsi + rdx]	; save byte to move
-	mov byte [rdi + rdx], bh	; move to dest
-	jmp .loop
+	mov rcx, rdx				; size
 
-.end:
-	mov rax, rdi
+	cld
+	rep movsb
+
+	pop rax
 	pop rbp
 	ret

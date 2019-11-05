@@ -1,16 +1,14 @@
 global _ft_strlen
 
 _ft_strlen:
-	push rbp
-	mov rbp, rsp
 	mov rax, 0
 
-.iter:
-	cmp byte [rax + rdi], 0		; end of string?
-	je .ret
-	inc rax
-	jmp .iter
+    mov rax, 0      ; compare byte for rep
+    mov rcx, -1     ; counter
 
-.ret:
-	pop rbp
-	ret
+    repnz scasb     ; dec rcx until 0
+
+    mov rax, rcx
+    inc rax
+    not rax
+    ret
