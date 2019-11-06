@@ -6,16 +6,22 @@ extern _ft_memcpy
 _ft_strdup:
 	push rbp
 	mov rbp, rsp
-	mov r14, rdi				; save string to dup
+
+	push rdi					; str
 	call _ft_strlen
-	add rax, 1					; len to malloc
-	mov r15, rax				; save strlen
+	push rax					; strlen
+
+	inc rax						; len to malloc
 	mov rdi, rax				; load len to malloc
+
 	call _malloc
+
 	cmp rax, 0
-	je .ret						; malloc failed
-	mov rdi, r14				; len
-	mov rsi, r15				; string
+	pop rdx						; strlen
+	pop rsi						; str
+	mov rdi, rax
+	je .ret						; malloc fail
+
 	call _ft_memcpy
 
 .ret:

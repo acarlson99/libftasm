@@ -11,6 +11,11 @@ int main()
 	/* printf("%s\n", strcat(b, c)); */
 	/* printf("%s\n", ft_strcat(b, c)); */
 
+	char *m = ft_strdup("ABCDEF");
+	printf("%p\n", m);
+	printf("%s\n", m);
+	free(m);
+
 	printf("%zu\n", ft_strlen(""));
 	{
 		char *str = (char *)malloc(sizeof(char) * 100);
