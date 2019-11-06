@@ -4,8 +4,11 @@ extern _ft_strlen
 _ft_strcat:
 	push rbp
 	mov rbp, rsp
-	call _ft_strlen
+
 	push rdi
+	push rdi
+	call _ft_strlen
+	pop rdi
 	add rdi, rax				; starting index
 	pop rax
 

@@ -6,7 +6,10 @@ section .text
 _ft_puts:
 	push rbp
 	mov rbp, rsp
+
+	push rdi
 	call _ft_strlen
+	pop rdi
 	mov rdx, rax				; len
 	mov rax, 0x2000004			; command
 	mov rsi, rdi				; msg

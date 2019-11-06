@@ -30,4 +30,41 @@ int main()
 		str = strcat(str, c);
 		printf("LIB [%s]\n", str);
 	}
+	{
+		puts("");
+		int ret = ft_puts("42");
+		puts("");
+		if (ret > 0)
+			printf("(nonnegative value returned)");
+		else if (ret < 0)
+			printf("(negative value returned)");
+		else
+			printf("(returns 0)");
+		printf("\n%d\n", ret);
+	}
+	{
+		puts("");
+		int ret = puts("42");
+		puts("");
+		if (ret > 0)
+			printf("(nonnegative value returned)");
+		else if (ret < 0)
+			printf("(negative value returned)");
+		else
+			printf("(returns 0)");
+		printf("\n%d\n", ret);
+	}
+
+	{
+		char a[200];
+		char *s = ft_memset(a, 'F', 20);
+		printf("%p %p\n", a, s);
+		printf("%s\n", s);
+	}
+	{
+		char a[200];
+		char *s = memset(a, 'F', 20);
+		printf("%p %p\n", a, s);
+		printf("%s\n", s);
+	}
 }

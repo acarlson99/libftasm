@@ -7,11 +7,12 @@ _ft_memset:
 	push rbp
 	mov rbp, rsp
 
+	push rdi					; ret
 	mov rax, rsi				; char
 	mov rcx, rdx				; len
 	cld
-	rep stosb					; store string 
+	rep stosb
 
+	pop rax
 	pop rbp
-	mov rax, rdi
 	ret
